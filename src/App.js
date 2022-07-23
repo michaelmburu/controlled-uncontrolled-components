@@ -13,7 +13,7 @@ const StepOne = ({goToNext}) => (
 const StepTwo = ({goToNext}) => (
   <>
     <h1>Step 2</h1>
-    <button onClick={() => goToNext({age: 20})}>Next</button>
+    <button onClick={() => goToNext({age: 100})}>Next</button>
   </>
 )
 
