@@ -1,12 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
-import { UncontrolledForm } from './UnControlledForm';
-import { ControlledForm } from './ControlledForm';
 
-// Controlled Forms
+import './App.css';
+import { ControlledModal } from './ControlledModal';
+import { useEffect, useState } from 'react';
+
+// Controlled Modal
 function App() {
-  return (
-    <ControlledForm />
+
+  const [shouldShowModal, setShouldShowModal] = useState(false);
+
+  return(
+    <>
+      <ControlledModal
+         shouldShow={shouldShowModal}
+         onRequestClose={() => setShouldShowModal(false)}
+      >
+        <h1>Hello !</h1>
+      </ControlledModal> 
+      <button onClick={() => setShouldShowModal(!shouldShowModal)}>
+        { shouldShowModal ? 'Hide Modal' : 'Show Modal' }
+      </button>
+    </>
   );
 }
 
